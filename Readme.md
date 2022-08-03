@@ -1,5 +1,5 @@
 
-Conheça a Zoe - A Inteligência Artificial da Vincers!
+# Conheça a Zoe - A trascriber da Vincers!
 
 Ainda estou configurando para colocar ela totalmente online, mas já é um começo para começar a testar essa nova versão da Zoe!
 
