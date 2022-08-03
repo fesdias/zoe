@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="/static/Vincers-favicon.png"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <title>Zoe - Vincers</title>
+
+    <style>
+
+      body {
+        background-color: #000000;
+        font-family: helvetica;
+        color: white;
+        padding: 5px 15%;
+      }
+
+      form {
+        text-align: center;
+      }
+
+      .zoe {
+        margin-right: auto;
+        margin-right: auto;
+        text-align: center;
+        padding: 30px;
+      }
+
+      .zoe img {
+        width: 90px;
+        display: inline-block;
+      }
+
+      .botoes {
+        text-align: center;
+        padding: 20px;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="zoe">
+      <img src="{{url_for('static', filename='vincers-logo.png')}}">
+      <h1>ZOE</h1>
+      <p>{{ status }}</p>
+      
+    </div>
+
+    <form method="POST" enctype="multipart/form-data">
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" name="File">
+        <label class="custom-file-label" for="inputGroupFile04">Escolha um arquivo</label>
+      </div>
+
+      <div class="botoes">  
+        <button type="submit" class="btn btn-outline-info">Enviar transcrição</button>
+
+        <a href= {{ captionFile }} download>
+          <button type="button" class="btn btn-outline-info" id="download-button">Download legenda</button>
+        </a>
+      </div>
+    </form>
+
+    <script type="text/javascript">
+
+            $('#inputGroupFile04').on('change',function(){
+                //get the file name
+                var fileName = $(this).val();
+                //replace the "Choose a file" label
+                $(this).next('.custom-file-label').html(fileName.replace(/^.*\\/, ""));
+            })
+
+    </script>
+
+  </body>
