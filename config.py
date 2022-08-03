@@ -10,5 +10,3 @@ DEBUG                     = True
 PORT                      = 5000
 
 #export S3_BUCKET="zoe-transcricoes"
-#export S3_ACCESS_KEY="AKIAJM672JVARPUZYWEQ"
-#export S3_SECRET_ACCESS_KEY="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"
